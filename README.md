@@ -63,3 +63,22 @@ frontend/.env
 env
 VITE_API_BASE_URL=https://arkai-backend.onrender.com
 
+4. Run the app
+bash
+# Backend
+cd backend
+npm start
+
+# Frontend
+cd ../frontend
+npm run dev
+
+🚧 Future Enhancements
+Add voice or image input support
+
+User authentication and personal chat threads
+
+Chat thread export/download feature
+
+Dark/light mode toggle
+
