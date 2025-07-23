@@ -69,7 +69,7 @@ function Sidebar() {
     return (
         <section className="sidebar">
             <button onClick={createNewChat}>
-                <img src="src/assets/arkai circle2.png" alt="arkai logo" className="logo"></img>
+                <img src="/arkai circle2.png" alt="arkai logo" className="logo"></img>
                 <span><i className="fa-solid fa-pen-to-square"></i></span>
             </button>
 
