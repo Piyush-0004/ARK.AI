@@ -1,13 +1,24 @@
 # ARKAI – AI Chat Application
 
-A full-stack AI chatbot built using **React**, **Node.js**, **Express**, **MongoDB**, and the **OpenAI GPT-4o-mini API**. It enables real-time conversations with an intelligent assistant and features a clean, modern UI with persistent threads.
+A full-stack AI chatbot built using React, Node.js, Express, MongoDB, and the OpenAI GPT-4o-mini API. It enables real-time, dynamic conversations with an intelligent assistant that can answer questions, generate code, solve problems, and provide helpful insights—just like ChatGPT.
+
+ - Smart Chat Interface – Clean and modern UI built with React for smooth user experience.
+
+ - GPT-4o-mini Integration – Leverages OpenAI’s GPT-4o-mini model to deliver fast and intelligent responses.
+
+ - Persistent Threads – Conversations are saved in MongoDB, allowing users to view and continue old chats.
+
+ - MongoDB Integration – Stores chat history, thread metadata, and user inputs in a scalable NoSQL database.
+
+ - Developer-Friendly – GPT-4o-mini can write code, debug errors, answer technical queries, and more.
+
+ - Deployed on Render – Fully hosted backend and frontend with separate services, integrated via environment variables.
 
 ---
 
 ##  Live Demo
 
-**Frontend**: [https://ark-ai-l8in.onrender.com](https://ark-ai-l8in.onrender.com)  
-**Backend**: [https://arkai-backend.onrender.com](https://arkai-backend.onrender.com)
+**Link**: [https://ark-ai-l8in.onrender.com](https://ark-ai-l8in.onrender.com)  
 
 ---
 
@@ -33,47 +44,7 @@ A full-stack AI chatbot built using **React**, **Node.js**, **Express**, **Mongo
 ---
 
 
-##  Setup Instructions (Locally)
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/your-username/arkai.git
-cd arkai
-
-# Frontend
-cd frontend
-npm install
-
-# Backend
-cd ../backend
-npm install
-
----
-
-### 3. **Create .env files**
-backend/.env
-
-env
-PORT=8080
-MONGODB_URI=your-mongodb-uri
-OPENAI_API_KEY=your-openai-api-key
-frontend/.env
-
-env
-VITE_API_BASE_URL=https://arkai-backend.onrender.com
-
-4. Run the app
-bash
-# Backend
-cd backend
-npm start
-
-# Frontend
-cd ../frontend
-npm run dev
-
-🚧 Future Enhancements
+## Future Enhancements
 Add voice or image input support
 
 User authentication and personal chat threads
@@ -82,3 +53,12 @@ Chat thread export/download feature
 
 Dark/light mode toggle
 
+--- 
+
+## Author
+Piyush
+
+---
+
+## Feedback
+Feel free to open an issue or contribute to the repo.
