@@ -9,7 +9,7 @@ const PORT = 8080;
 
 app.use(express.json());
 app.use(cors({origin: 'https://ark-ai-l8in.onrender.com'}));    // allow frontend url to connect backend 
-app.options('*', cors());   // handle preflight requests
+//app.options('*', cors());   // handle preflight requests
 
 app.use("/api", chatRoutes);
 
