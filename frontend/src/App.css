@@ -1,6 +1,15 @@
 * {
     color: #ececec;
     font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box; /* important to prevent width overflow */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* prevents horizontal scroll / right white space */
 }
 
 body {
