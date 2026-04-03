@@ -4,10 +4,10 @@ import { MyContext } from "./MyContext.jsx";
 import { useContext, useState, useEffect } from "react";
 import {ScaleLoader} from "react-spinners";   // loader animation package
 
-function ChatWindow() {
+function ChatWindow({ setIsOpen }) {
     const {prompt, setPrompt,reply,setReply,currThreadId, prevChats, setPrevChats, setNewChat} = useContext(MyContext);
     const [loading,setLoading] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);  // dropdown
+    const [isOpen, setIsOpenDropdown] = useState(false);  // dropdown
 
     const getReply = async () => {
         setLoading(true);
@@ -53,12 +53,18 @@ function ChatWindow() {
     }, [reply]);
 
     const handleProfileClick = () => {
-       setIsOpen(!isOpen);
+       setIsOpenDropdown(!isOpen);
     }
 
     return (
         <div className="chatWindow">
             <div className="navbar">
+
+                {/* ✅ MENU BUTTON */}
+                <button className="menu-btn" onClick={() => setIsOpen(prev => !prev)}>
+                    ☰
+                </button>
+
                 <span className="logoword">ARK.AI <i className="fa-solid fa-chevron-down arrow"></i> </span>
                 <div className="userIconDiv" onClick={handleProfileClick}>
                     <span className="userIcon"><i className="fa-solid fa-user"></i></span>
@@ -68,9 +74,9 @@ function ChatWindow() {
             {
                 isOpen && 
                 <div className="dropDown">
-                    <div className="dropDownItem"><i class="fa-solid fa-gear"></i> Settings</div>
-                    <div className="dropDownItem"><i class="fa-solid fa-cloud-arrow-up"></i> Upgrade plan</div>
-                    <div className="dropDownItem"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</div>
+                    <div className="dropDownItem"><i className="fa-solid fa-gear"></i> Settings</div>
+                    <div className="dropDownItem"><i className="fa-solid fa-cloud-arrow-up"></i> Upgrade plan</div>
+                    <div className="dropDownItem"><i className="fa-solid fa-arrow-right-from-bracket"></i> Log out</div>
                 </div>
             }
 

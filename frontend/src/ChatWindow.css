@@ -1,12 +1,23 @@
 .chatWindow {
     background-color: #212121;
     height: 100vh;
-    width: 100%;
+   /* width: 100%;*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    flex: 1;
+}
+
+/* desktop layout (sidebar space) */
+
+
+/* mobile fix */
+@media (max-width: 768px) {
+  .chatWindow {
+    margin-left: 0;
+  }
 }
 
 /* navbar */
@@ -15,6 +26,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .navbar span {
@@ -37,16 +49,39 @@
 }
 
 .logoword {
-     font-family: 'Cormorant Garamond', serif;
-      font-size: 20px; /* Smaller size */
-      font-weight: 200; 
-      color: #D4AF37;  /* Gold color */
-      letter-spacing: 1px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 200; 
+    color: #D4AF37;
+    letter-spacing: 1px;
 }
 
 .arrow {
-     color: #D4AF37;
-     font-size: 12px;
+    color: #D4AF37;
+    font-size: 12px;
+}
+
+/* menu button (mobile sidebar toggle) */
+.menu-btn {
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/*  HIDE on desktop */
+@media (min-width: 769px) {
+  .menu-btn {
+    display: none;
+  }
+}
+
+/*  SHOW on mobile */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
 }
 
 /* chat input */
@@ -107,20 +142,18 @@ input:focus {
     color: #b4b4b4;
 }
 
-/* dropdown css */
-
+/* dropdown */
 .dropDown {
     position: absolute;
     top: 4rem;
-    right: 4rem;
+    right: 2rem; /* slightly adjusted for better alignment */
     width: 150px;
-
     background-color: #323232;
     padding: 0.3rem 0.5rem;
     border-radius: 6px;
     text-align: left;
-    z-index: 1000;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1500;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .dropDownItem {
@@ -129,7 +162,6 @@ input:focus {
     padding: 0.5rem 0.2rem;
     cursor: pointer;
 }
-
 
 .dropDownItem:hover {
     background-color: rgba(180, 180, 180, 0.1);

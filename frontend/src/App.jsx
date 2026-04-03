@@ -1,5 +1,5 @@
 import './App.css';
-import Sidebar from "./Sidebar.jsx";
+import Sidebar from "./sidebar.jsx";
 import ChatWindow from "./ChatWindow.jsx";
 import { MyContext } from './MyContext.jsx';
 import { useState } from 'react';
@@ -13,6 +13,9 @@ function App() {
   const [newChat, setNewChat] = useState(true);     // create new chat when we start our app
   const [allThreads, setAllThreads] = useState([]);  //store all thread 
 
+  //  ADDED (sidebar state)
+  const [isOpen, setIsOpen] = useState(false);
+
   const providerValues = {                // passing values
     prompt,setPrompt,
     reply,setReply,
@@ -25,11 +28,11 @@ function App() {
   return (
     <div className='app'>
       <MyContext.Provider value={providerValues}>
-          <Sidebar></Sidebar>
-          <ChatWindow></ChatWindow>
+          <Sidebar isOpen={isOpen} setIsOpen={setIsOpen}></Sidebar>
+          <ChatWindow setIsOpen={setIsOpen}></ChatWindow>
         </MyContext.Provider>
     </div>
   )
 }
 
-export default App
+export default App;

@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import { MyContext } from "./MyContext.jsx";
 import { v1 as uuidv1} from "uuid";
 
-function Sidebar() {
+function Sidebar({ isOpen, setIsOpen }) {
     const {allThreads, setAllThreads, currThreadId, setNewChat, setPrompt, setReply, setCurrThreadId, setPrevChats} = useContext(MyContext);
 
     const getAllthreads = async () => {
@@ -29,10 +29,20 @@ function Sidebar() {
         setReply(null);
         setCurrThreadId(uuidv1());
         setPrevChats([]);
+
+        // ✅ close sidebar on mobile
+        if (window.innerWidth < 768) {
+            setIsOpen(false);
+        }
     }
 
     const changeThread = async (newThreadId) => {
         setCurrThreadId(newThreadId);
+
+        // ✅ close sidebar on mobile
+        if (window.innerWidth < 768) {
+            setIsOpen(false);
+        }
 
         try {
             //const response = await fetch(`http://localhost:8080/api/thread/${newThreadId}`);
@@ -67,7 +77,7 @@ function Sidebar() {
     }
 
     return (
-        <section className="sidebar">
+        <section className={`sidebar ${isOpen ? "open" : ""}`}>
             <button onClick={createNewChat}>
                 <img src="/arkai circle2.png" alt="arkai logo" className="logo"></img>
                 <span><i className="fa-solid fa-pen-to-square"></i></span>
